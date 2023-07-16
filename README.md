@@ -7,7 +7,7 @@ Hello and welcome to my first R Programming project. This won't be a deep dive l
 
 ## Data Sources
 
-The Dataset used in this project was retrieved from the [Kaggle](https://www.kaggle.com/datasets/sudalairajkumar/novel-corona-virus-2019-dataset). It uses data just from 2019.
+The Dataset used in this project was retrieved from the [Kaggle](https://www.kaggle.com/datasets/sudalairajkumar/novel-corona-virus-2019-dataset) by user SRK. It uses data just from 2019.
 
 
 
