@@ -1,0 +1,47 @@
+---
+title: "Covid-19 Deaths"
+output: html_document
+date: "2023-07-16"
+---
+# Removes any variables that might have been previously stored in the data, letting us start fresh
+rm(list=ls())
+# Install tidyverse and Himsc packages, then load with library. First time using a desktop version for both.
+install.packages("tidyverse")
+library(tidyverse)
+install.packages("Himsc")
+library(Hmisc)
+
+# Changing the long command to just data for future ease.
+data <- read.csv("C:/Users/stgor/Desktop/Kaggle Datasets/COVID19_line_list_data.csv")
+# Using summarize, tibble and describe to look over the data
+summarize(data)tibble(data)
+tibble(data)
+describe(data) 
+
+# Data had some numbers that didn't make sense, so using this to fix the data
+data$death_dummy <- as.integer(data$death != 0)
+#Finding death rate
+sum(data$death_dummy) / nrow(data)
+
+# Age
+# Is it true that older people are more susceptible to death from Covid-19?
+dead = subset(data, death_dummy == 1)
+alive = subset(data, death_dummy == 0)
+mean(dead$age, na.rm = TRUE)
+mean(alive$age, na.rm = TRUE)
+# Is the found data statistically significant?
+t.test(alive$age, dead$age, alternative="two.sided", conf.level = 0.99)
+# If the p-value < 0.05, we should reject the null hypothesis
+# The found p-value is 0-ish, so we reject the null hypothesis and
+# conclude that this is statistically significant 
+
+# Gender
+# Does gender have any effect with the likelihood of death from Covid-19?
+men = subset(data, gender == "male")
+women = subset(data, gender == "female")
+mean(men$death_dummy, na.rm = TRUE) # 8.4%
+mean(women$death_dummy, na.rm = TRUE) # $ 3.7%
+# Is the found data statistically significant?
+t.test(men$death_dummy, women$death_dummy, alternative="two.sided", conf.level = 0.99)
+# Men have from 0.8% to 8.8% higher chance of death
+# The p-value is 0.002 < 0.05, so this is statistically significant.
