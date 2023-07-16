@@ -7,14 +7,14 @@ Hello and welcome to my first R Programming project. This won't be a deep dive l
 
 ## Data Sources
 
-The Dataset used in this project was retrieved from the [Kaggle](https://www.kaggle.com/datasets/sudalairajkumar/novel-corona-virus-2019-dataset)). It uses data just from 2019.
+The Dataset used in this project was retrieved from the [Kaggle](https://www.kaggle.com/datasets/sudalairajkumar/novel-corona-virus-2019-dataset). It uses data just from 2019.
 
 
 
 ## Changelog & Cleaning
 
 As a departure from my other repositories, I will not be explaining the step-by-step process here, as I have put each step and thought process in the comments of the R Markdown. 
-You can find the R Programming code here: 
+You can find the R Programming code here: [R Programming Code](https://github.com/stgordillo/r_programming_project/blob/main/r_programming_code.rmd)
 
 
 ## Visualization Steps
